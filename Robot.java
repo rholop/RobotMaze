@@ -29,7 +29,25 @@ public abstract class Robot {
 
 }
 
-class ScientistRobot extends Robot {
+abstract class ImmoveableRobot extends Robot
+{
+    // private static Location location;
+    // private int traversed;
+    
+    protected ImmoveableRobot(String name) {
+        super(name);
+    }
+    /**
+    private void setLocation(Location location) {
+        this.location = location;
+    }
+    public Location getLocation() {
+        return this.location;
+    }*/
+}
+
+
+class ScientistRobot extends ImmoveableRobot {
     protected ScientistRobot(String name) {
         super(name);
     }
@@ -43,7 +61,7 @@ class ScientistRobot extends Robot {
             return super.speak() + showExpertise();
         }
 }
-class DoctorRobot extends Robot {
+class DoctorRobot extends ImmoveableRobot {
     protected DoctorRobot(String name) {
         super(name);
     }
@@ -55,7 +73,7 @@ class DoctorRobot extends Robot {
         return super.speak() + showExpertise();
     }
 }
-class StudentRobot extends Robot {
+class StudentRobot extends ImmoveableRobot {
     protected StudentRobot(String name) {
         super(name);
     }
@@ -67,7 +85,7 @@ class StudentRobot extends Robot {
         return super.speak() + showExpertise();
     }
 }
-class PolicemanRobot extends Robot {
+class PolicemanRobot extends ImmoveableRobot {
     public PolicemanRobot(String name) {
         super(name);
     }
@@ -80,6 +98,23 @@ class PolicemanRobot extends Robot {
     }
 }
 
+public class Alice extends ImmoveableRobot {
+    private static Alice instance;
+    
+    private Alice(String name)
+    {
+        super(name);
+    }
+
+    public static Alice getAlice() {
+        if (instance == null)
+        {
+            instance = new Alice("Alice");
+        }
+        return instance;
+    }
+}
+
 abstract class MoveableRobot extends Robot
 {
     // private Location location;
@@ -89,9 +124,6 @@ abstract class MoveableRobot extends Robot
         super(name);
     }
     /**
-    public Location getLocation() {
-        return this.location;
-    }
     public void setLocation(Location location) {
         this.location = location;
     }
