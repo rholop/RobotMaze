@@ -25,14 +25,12 @@ public abstract class Robot {
     }
 
 }
-interface CitizenRobot {
-    public String showExpertise();
-}
-class ScientistRobot extends Robot implements CitizenRobot {
+
+class ScientistRobot extends Robot {
     protected ScientistRobot(String name) {
         super(name);
     }
-    public String showExpertise() {
+    protected String showExpertise() {
         String temp = "";
         temp += " and I am a scientist robot";
         return temp;
@@ -42,7 +40,7 @@ class ScientistRobot extends Robot implements CitizenRobot {
             return super.speak() + showExpertise();
         }
 }
-class DoctorRobot extends Robot implements CitizenRobot {
+class DoctorRobot extends Robot {
     public DoctorRobot(String name) {
         super(name);
     }
