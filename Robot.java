@@ -41,10 +41,10 @@ class ScientistRobot extends Robot {
         }
 }
 class DoctorRobot extends Robot {
-    public DoctorRobot(String name) {
+    protected DoctorRobot(String name) {
         super(name);
     }
-    public String showExpertise() {
+    protected String showExpertise() {
         return " and I am a doctor robot";
     }
     @Override
@@ -53,7 +53,7 @@ class DoctorRobot extends Robot {
     }
 }
 class StudentRobot extends Robot {
-    public StudentRobot(String name) {
+    protected StudentRobot(String name) {
         super(name);
     }
     protected String showExpertise() {
