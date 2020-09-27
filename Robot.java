@@ -42,3 +42,27 @@ class ScientistRobot extends Robot implements CitizenRobot {
             return super.speak() + showExpertise();
         }
 }
+class DoctorRobot extends Robot implements CitizenRobot {
+    public DoctorRobot(String name) {
+        super(name);
+    }
+    public String showExpertise() {
+        return " and I am a doctor robot";
+    }
+    @Override
+    protected String speak() {
+        return super.speak() + showExpertise();
+    }
+}
+class StudentRobot extends Robot {
+    public StudentRobot(String name) {
+        super(name);
+    }
+    protected String showExpertise() {
+        return " and I am a student robot";
+    }
+    @Override
+    protected String speak() {
+        return super.speak() + " and I am a doctor robot";
+    }
+}
