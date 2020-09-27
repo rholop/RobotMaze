@@ -1,10 +1,20 @@
-abstract class RobotFactory{
-
-    public abstract Robot deliverARobot(String name, String typeClue);
-
+enum TypesofRobot {
+    ScientistRobot,
+    DoctorRobot,
+    StudentRobot,
+    PolicemanRobot
 }
-
-public class MazeRobotFactory{
-    
-    
-}
+class RobotFactory{
+	
+	public Robot deliverARobot(String name, TypesOfRobot typeClue) {
+        switch(typeClue) {
+            case typeClue.ScientistRobot:
+                return new ScientistRobot(name);
+            case typeClue.DoctorRobot:
+                return new DoctorRobot(name);
+            case typeClue.StudentRobot:
+                return new StudentRobot(name);
+            default:
+                return new PolicemanRobot(name);
+        }
+    }

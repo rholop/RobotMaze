@@ -10,26 +10,6 @@ import java.util.Random;
  * @author rowanholop
  * version 1.1 
  */
-enum TypesofRobot {
-    ScientistRobot,
-    DoctorRobot,
-    StudentRobot,
-    PolicemanRobot
-}
-class RobotFactory{
-	
-	public Robot deliverARobot(String name, TypesOfRobot typeClue) {
-        switch(typeClue) {
-            case typeClue.ScientistRobot:
-                return new ScientistRobot(name);
-            case typeClue.DoctorRobot:
-                return new DoctorRobot(name);
-            case typeClue.StudentRobot:
-                return new StudentRobot(name);
-            default:
-                return new PolicemanRobot(name);
-        }
-    }
 public abstract class Robot {
 
     private String name;
