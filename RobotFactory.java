@@ -1,8 +1,8 @@
 enum TypesofRobot {
-    ScientistRobot,
-    DoctorRobot,
-    StudentRobot,
-    PolicemanRobot
+    Scientist,
+    Doctor,
+    Student,
+    Policeman
 }
 class RobotFactory{
 	
