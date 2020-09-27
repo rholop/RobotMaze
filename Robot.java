@@ -76,3 +76,51 @@ class PolicemanRobot extends Robot {
         return super.speak() + showExpertise();
     }
 }
+
+abstract class MoveableRobot extends Robot
+{
+    // private Location location;
+    // private int traversed;
+    
+    protected MoveableRobot(String name) {
+        super(name);
+    }
+    /**
+    public Location getLocation() {
+        return this.location;
+    }
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+    protected void move(Location current, Location next) {
+        assert(this == Location.getRobot());
+        if (!current.equals(next)) {
+            assert(next.getRobot() == null);
+            next.setRobot(this);
+            current.setRobot(null);
+            traversed++;
+        }
+        // do some moving stuff
+    }
+    */
+}
+
+public class Bob extends MoveableRobot{
+    protected Bob(String name)
+    {
+        super(name);
+    }
+    @Override
+    protected String speak() {
+        return "Who are you?";
+    }
+    void checkRobot(Robot r){
+        if (r.getName() == "Alice") {
+            finishMoving();
+        }
+    }
+    private void finishMoving() {
+        System.out.println("I found Alice!");
+        // Something to finish the puzzle
+    }
+}
