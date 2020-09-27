@@ -31,7 +31,7 @@ abstract class ImmoveableRobot extends Robot
     // private static Location location;
     // private int traversed;
     
-    protected MoveableRobot(String name) {
+    protected ImmoveableRobot(String name) {
         super(name);
     }
     /**
