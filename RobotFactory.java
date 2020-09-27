@@ -8,11 +8,11 @@ class RobotFactory{
 	
 	public Robot deliverARobot(String name, TypesofRobot typeClue) {
         switch(typeClue) {
-            case typeClue.ScientistRobot:
+            case ScientistRobot:
                 return new ScientistRobot(name);
-            case typeClue.DoctorRobot:
+            case DoctorRobot:
                 return new DoctorRobot(name);
-            case typeClue.StudentRobot:
+            case StudentRobot:
                 return new StudentRobot(name);
             default:
                 return new PolicemanRobot(name);
