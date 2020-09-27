@@ -61,6 +61,18 @@ class StudentRobot extends Robot {
     }
     @Override
     protected String speak() {
-        return super.speak() + " and I am a doctor robot";
+        return super.speak() + showExpertise();
+    }
+}
+class PolicemanRobot extends Robot {
+    public PolicemanRobot(String name) {
+        super(name);
+    }
+    protected String showExpertise() {
+        return " and I am a policeman robot";
+    }
+    @Override
+    protected String speak() {
+        return super.speak() + showExpertise();
     }
 }
