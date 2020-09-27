@@ -105,19 +105,32 @@ abstract class MoveableRobot extends Robot
 }
 
 public class Bob extends MoveableRobot{
-    protected Bob(String name)
+    private static Bob instance;
+    
+    private Bob(String name)
     {
         super(name);
     }
+
+    public static Bob getBob() {
+        if (instance == null)
+        {
+            instance = new Bob("Bob");
+        }
+        return instance;
+    }
+    
     @Override
     protected String speak() {
         return "Who are you?";
     }
-    void checkRobot(Robot r){
+    
+    public void checkRobot(Robot r){
         if (r.getName() == "Alice") {
             finishMoving();
         }
     }
+    
     private void finishMoving() {
         System.out.println("I found Alice!");
         // Something to finish the puzzle
