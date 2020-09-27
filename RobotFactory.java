@@ -6,7 +6,7 @@ enum TypesofRobot {
 }
 class RobotFactory{
 	
-	public Robot deliverARobot(String name, TypesOfRobot typeClue) {
+	public Robot deliverARobot(String name, TypesofRobot typeClue) {
         switch(typeClue) {
             case typeClue.ScientistRobot:
                 return new ScientistRobot(name);
