@@ -1,5 +1,6 @@
 
 import java.lang.String;
+import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -10,11 +11,14 @@ import java.util.Random;
  * @author rowanholop
  * version 1.1 
  */
+
 public abstract class Robot {
 
     private String name;
-    protected Robot(String name) {
+    TypesofRobot typeClue;
+    protected Robot(String name, TypesofRobot t) {
         this.name = name;
+        this.typeClue = t;
     }
     protected String getName() {
         return this.name;
