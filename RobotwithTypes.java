@@ -117,14 +117,6 @@ public class Alice extends ImmoveableRobot
     }
 }
 
-
-
-/**
- * Abstract class MoveableRobot - write a description of the class here
- *
- * @author (your name here)
- * @version (version number or date here)
- */
 public abstract class MoveableRobot extends Robot
 {
     // private Location location;
@@ -155,7 +147,6 @@ public abstract class MoveableRobot extends Robot
     }
     */
 }
-
 
 public class Bob extends MoveableRobot
 {
