@@ -1,20 +1,39 @@
-enum TypesofRobot {
-    Scientist,
-    Doctor,
-    Student,
-    Policeman
+import java.util.Random;
+
+abstract class RobotFactory{
+
+    public abstract Robot deliverARobot();
+
 }
-class RobotFactory{
-	
-	public Robot deliverARobot(String name, TypesofRobot typeClue) {
-        switch(typeClue) {
-            case Scientist:
-                return new ScientistRobot(name);
-            case Doctor:
-                return new DoctorRobot(name);
-            case Student:
-                return new StudentRobot(name);
-            default:
-                return new PolicemanRobot(name);
+
+public class MazeRobotFactory{
+    Bob bob = Bob.getBob();
+    Alice alice = Alice.getAlice();
+    Random generator = new Random();
+    int bot;
+    
+    public Robot deliverBob() {
+        return bob;
+    }
+    
+    public Robot deliverAlice() {
+        return alice;
+    }
+    
+    public Robot deliverARobot() {
+        bot = generator.nextInt(4);
+        if (bot == 0) {
+            return new ScientistRobot("science");
+        }
+        if (bot == 1) {
+            return new DoctorRobot("doc");
+        }
+        if (bot == 2) {
+            return new StudentRobot("stud");
+        }
+        else {
+            return new PolicemanRobot("police");
         }
     }
+    
+}
