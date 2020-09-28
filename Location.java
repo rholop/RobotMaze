@@ -13,18 +13,21 @@ public class Location {
       this.y = y;
       visited = false;
    }
+   public int getX() {
+      return x;
+   }
+   public int getY() {
+      return y;
+   }
    public void setRobot(Robot r) {
       this.r = r;
    }
    // Returns the robot stored in this location
    public Robot getRobot() {
-      if (r == null)
-         return null;
-      else
-         return r;
+      return r;
    }
    // Marks visited as true
-   public void placeBreadcrumb() {
+   public void markVisited() {
       visited = true;
    }
    public boolean isVisited() {
