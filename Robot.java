@@ -14,12 +14,18 @@ public abstract class Robot {
 
     private String name;
     private String type;
-
+    private int x;
+    private int y;
     protected Robot(String name, String type) {
         this.name = name;
         this.type = type;
     }
-    
+    protected int getX() {
+        return x;
+    }
+    protected int getY() {
+        return y;
+    }
     protected String getName() {
         return this.name;
     }
@@ -99,7 +105,7 @@ class PolicemanRobot extends ImmoveableRobot {
     }
 }
 
-public class Alice extends ImmoveableRobot
+class Alice extends ImmoveableRobot
 {
     private static Alice instance;
     
@@ -117,7 +123,7 @@ public class Alice extends ImmoveableRobot
     }
 }
 
-public abstract class MoveableRobot extends Robot
+abstract class MoveableRobot extends Robot
 {
     // private Location location;
     // private int traversed;
