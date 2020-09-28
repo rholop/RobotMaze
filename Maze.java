@@ -28,6 +28,7 @@ public class Maze {
     private boolean[][] west;
     private boolean[][] visited;
     private boolean[][] occupied;
+    // private Robot[][] bots;
     private boolean done = false;
 
     public Maze(int n) {
@@ -170,6 +171,7 @@ public class Maze {
     public void draw() {
         StdDraw.setPenColor(StdDraw.RED);
         StdDraw.filledCircle(n + 0.5, n + 0.5, 0.375);
+        // Deliver alice?
         // Set alice's location ????
         StdDraw.filledCircle(1.5, 1.5, 0.375);
 
