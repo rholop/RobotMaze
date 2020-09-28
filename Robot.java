@@ -1,6 +1,5 @@
 
 import java.lang.String;
-import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -11,20 +10,22 @@ import java.util.Random;
  * @author rowanholop
  * version 1.1 
  */
-
 public abstract class Robot {
 
     private String name;
-    TypesofRobot typeClue;
-    protected Robot(String name, TypesofRobot t) {
+    private String type;
+
+    protected Robot(String name, String type) {
         this.name = name;
-        this.typeClue = t;
+        this.type = type;
     }
+    
     protected String getName() {
         return this.name;
     }
+    
     protected String speak() {
-        return "My name is " + getName();
+        return "My name is " + name;
     }
 
 }
@@ -34,8 +35,8 @@ abstract class ImmoveableRobot extends Robot
     // private static Location location;
     // private int traversed;
     
-    protected ImmoveableRobot(String name) {
-        super(name);
+    protected ImmoveableRobot(String name, String type) {
+        super(name, type);
     }
     /**
     private void setLocation(Location location) {
@@ -49,7 +50,7 @@ abstract class ImmoveableRobot extends Robot
 
 class ScientistRobot extends ImmoveableRobot {
     protected ScientistRobot(String name) {
-        super(name);
+        super(name, "Scientist");
     }
     protected String showExpertise() {
         String temp = "";
@@ -63,7 +64,7 @@ class ScientistRobot extends ImmoveableRobot {
 }
 class DoctorRobot extends ImmoveableRobot {
     protected DoctorRobot(String name) {
-        super(name);
+        super(name, "Docotor");
     }
     protected String showExpertise() {
         return " and I am a doctor robot";
@@ -75,7 +76,7 @@ class DoctorRobot extends ImmoveableRobot {
 }
 class StudentRobot extends ImmoveableRobot {
     protected StudentRobot(String name) {
-        super(name);
+        super(name, "Student");
     }
     protected String showExpertise() {
         return " and I am a student robot";
@@ -87,7 +88,7 @@ class StudentRobot extends ImmoveableRobot {
 }
 class PolicemanRobot extends ImmoveableRobot {
     public PolicemanRobot(String name) {
-        super(name);
+        super(name, "Policeman");
     }
     protected String showExpertise() {
         return " and I am a policeman robot";
@@ -98,12 +99,13 @@ class PolicemanRobot extends ImmoveableRobot {
     }
 }
 
-public class Alice extends ImmoveableRobot {
+public class Alice extends ImmoveableRobot
+{
     private static Alice instance;
     
     private Alice(String name)
     {
-        super(name);
+        super(name, "Alice");
     }
 
     public static Alice getAlice() {
@@ -115,18 +117,24 @@ public class Alice extends ImmoveableRobot {
     }
 }
 
-abstract class MoveableRobot extends Robot
+public abstract class MoveableRobot extends Robot
 {
     // private Location location;
     // private int traversed;
     
-    protected MoveableRobot(String name) {
-        super(name);
+    protected MoveableRobot(String name, String type) {
+        super(name, type);
     }
+    
     /**
+    public Location getLocation() {
+        return this.location;
+    }
+    
     public void setLocation(Location location) {
         this.location = location;
-    }
+    
+    
     protected void move(Location current, Location next) {
         assert(this == Location.getRobot());
         if (!current.equals(next)) {
@@ -140,12 +148,13 @@ abstract class MoveableRobot extends Robot
     */
 }
 
-public class Bob extends MoveableRobot{
+public class Bob extends MoveableRobot
+{
     private static Bob instance;
     
     private Bob(String name)
     {
-        super(name);
+        super(name, "Bob");
     }
 
     public static Bob getBob() {
