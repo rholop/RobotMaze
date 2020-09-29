@@ -15,5 +15,5 @@ Files:
     Abstract class Robot: defines the abstract class Robot that other methods inherit
 
     Instructions:
-        Run Maze.java with a filename in the commandline.
+        Run Client.java with a filename in the commandline.
         Example: java MyProgram myfile.type
