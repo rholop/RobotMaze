@@ -1,18 +1,19 @@
 # RobotMaze
 Authors: Mel McCord, Rowan Holop
 Files:
-    Bob: the Bob robot that searches for Alice
-    instance robot
-    Alice: the robot at the end
-    Client class:
-    RobotMaze: main function 
+    Robot.java: the Abstract Robot Class, defines the methods other Robots inherit
+    Bob.java: the Bob robot that searches for Alice
+    Alice.java: the robot at the end
+    ScientistRobot.java: scientist robot
+    DoctorRobot.java: doctor robot
+    PolicemanRobot.java: policeman robot
+    StudentRobot.java: student robot
+    MazeRobotFactory.java: Factory class that supplies robots to RobotMaze.java
+    Client.java: Facade class for simple usability
+    RobotMaze.java: Maze generator and solver - code for maze generation and solving based on:
         https://algs4.cs.princeton.edu/41graph/Maze.java.html
-    StdDraw: also draws the maze (see above for citation)
+    StdDraw.java: also draws the maze (see above for citation)
         https://introcs.cs.princeton.edu/java/stdlib/StdDraw.java.html
-    ScientistRobot: a Robot of type Scientist
-    DoctorRobot: doctor robot
-    PolicemanRobot: policeman robot
-    Abstract class Robot: defines the abstract class Robot that other methods inherit
 
     Instructions:
         Run Client.java with a filename in the commandline.
