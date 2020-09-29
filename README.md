@@ -17,3 +17,4 @@ Files:
     Instructions:
         Run Client.java with a filename in the commandline.
         Example: java MyProgram myfile.type
+        Program will read the first int of the file and create a maze size (first int * first int).
