@@ -1,6 +1,6 @@
 ---------------------------------------------------
 # RobotMaze
-# authors: Rowan Holop and Mel Mccord
+## authors: Rowan Holop and Mel Mccord
 
 ### The source code directory contains the following files:
 * Robot.java: the Abstract Robot Class, defines the methods other Robots inherit
